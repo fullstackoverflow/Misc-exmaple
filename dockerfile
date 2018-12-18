@@ -11,4 +11,6 @@ RUN mkdir /app && \
 
 COPY . /app
 
+WORKDIR /app
+
 CMD node index.js

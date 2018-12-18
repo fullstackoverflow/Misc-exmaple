@@ -7,5 +7,5 @@ export default {
 		mongo: '',
 	},
 	protocol: 'http',
-	port: 6666,
+	port: 6767,
 };
