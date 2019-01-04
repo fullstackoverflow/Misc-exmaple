@@ -1,5 +1,6 @@
-import { object, boolean } from 'joi';
+import { IsBoolean } from 'class-validator';
 
-export const Test = object({
-	test: boolean().required(),
-});
+export class Test {
+	@IsBoolean()
+	test: boolean;
+}

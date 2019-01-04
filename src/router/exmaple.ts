@@ -3,7 +3,7 @@ import { Service } from '../service/Service';
 import { Test } from '../schema/test';
 import { Controller, Autowired, GET, Validate, Value } from '@tosee/misc';
 
-@Controller('/test')
+@Controller()
 export default class Router {
 	@Autowired()
 	Service: Service;
