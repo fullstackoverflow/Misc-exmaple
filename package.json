@@ -7,7 +7,7 @@
 		"doc": "doc"
 	},
 	"dependencies": {
-		"@tosee/misc": "^2.1.0",
+		"@tosee/misc": "^2.2.0",
 		"cross-env": "^5.2.0",
 		"ts-node": "^7.0.1",
 		"typescript": "^3.1.6"
