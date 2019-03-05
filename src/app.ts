@@ -8,7 +8,6 @@ Config.path = resolve(__dirname, './config');
 const app = new Misc({
 	keys: ['web_platform'],
 	beforeall: [errorHandler(), ReqLog()],
-	routerpath: resolve(__dirname, './router'),
 	protocol: Config.instance.protocol,
 	port: Config.instance.port,
 });
