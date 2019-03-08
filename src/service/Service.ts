@@ -1,3 +1,1 @@
-class Service {}
-
-export { Service };
+export class Service {}

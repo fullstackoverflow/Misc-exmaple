@@ -1,7 +1,7 @@
 import Koa from 'koa';
 import { Service } from '../service/Service';
 import { Test } from '../schema/test';
-import { Controller, Autowired, GET, Validate, Value } from '@tosee/misc';
+import { Controller, Autowired, GET, Validate, Value, logger } from '@tosee/misc';
 
 @Controller()
 export default class Router {

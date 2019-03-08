@@ -1,6 +1,6 @@
-import { IsBoolean } from 'class-validator';
+import { IsBoolean, IsString } from 'class-validator';
 
 export class Test {
-	@IsBoolean()
-	test: boolean;
+	@IsString()
+	test: string;
 }
