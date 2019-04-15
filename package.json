@@ -7,10 +7,10 @@
 		"doc": "doc"
 	},
 	"dependencies": {
-		"@tosee/misc": "^2.3.5",
+		"@tosee/misc": "^2.3.7",
 		"cross-env": "^5.2.0",
 		"ts-node": "^7.0.1",
-		"typescript": "^3.1.6"
+		"typescript": "^3.4.3"
 	},
 	"husky": {
 		"hooks": {
@@ -20,15 +20,15 @@
 	"devDependencies": {
 		"@types/jest": "^23.3.9",
 		"@types/supertest": "^2.0.6",
+		"alsatian": "^2.4.0",
 		"husky": "^1.1.4",
-		"jest": "^23.6.0",
 		"prettier": "^1.15.2",
 		"pretty-quick": "^1.8.0",
 		"supertest": "^3.3.0"
 	},
 	"scripts": {
 		"dev": "cross-env NODE_ENV=development node index.js",
-		"test": "jest --coverage --forceExit --runInBand"
+		"test": "cross-env NODE_ENV=development alsatian ./src/__tests__/*.spec.ts"
 	},
 	"author": "",
 	"license": "ISC"
