@@ -1,19 +1,15 @@
-import { logger, Res, Status } from '@tosee/misc';
+import { logger, Response } from '@tosee/misc';
 
 export const errorHandler = function() {
 	return async (ctx, next) => {
 		try {
 			await next();
 		} catch (err) {
-			if (err.code) {
-				if (process.env.NODE_ENV != 'production') {
-					ctx.body = new Res(err.code, err.message, err.data);
-				} else {
-					ctx.body = new Res(err.code, err.message, null);
-				}
+			if (!(err instanceof Response)) {
+				logger.error('Unexpected Error:', err);
+				ctx.body = 'Unexpected Error';
 			} else {
-				logger.error('unexpect error:', err);
-				ctx.body = new Res(Status.ERROR, 'server error', null);
+				ctx.body = err;
 			}
 		}
 	};

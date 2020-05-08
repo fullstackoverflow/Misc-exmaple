@@ -1,14 +1,11 @@
-import { ConfigComponent } from '@tosee/misc';
-
-@ConfigComponent('test')
-export default class test {
-	db = {
+export default {
+	db: {
 		redis: {
 			host: '',
 			password: '',
 		},
 		mongo: '',
-	};
-	protocol = 'http';
-	port = 3000;
-}
+	},
+	protocol: 'http',
+	port: 3000,
+};
