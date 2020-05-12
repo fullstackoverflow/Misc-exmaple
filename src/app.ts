@@ -5,7 +5,7 @@ import { Config } from '@tosee/config';
 
 const app = new Misc({
 	keys: ['web_platform'],
-	beforeall: [errorHandler(), ReqLog(), logger.Middleware()],
+	beforeall: [logger.Middleware(), errorHandler(), ReqLog()],
 	protocol: Config.instance.protocol,
 	port: Config.instance.port,
 });
