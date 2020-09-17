@@ -9,7 +9,7 @@
 	"dependencies": {
 		"@tosee/busboy": "^1.0.1",
 		"@tosee/config": "^1.0.5",
-		"@tosee/misc": "^4.1.3",
+		"@tosee/misc": "^4.1.4",
 		"@tosee/util": "^1.0.3",
 		"cross-env": "^5.2.1",
 		"typescript": "^3.9.7"
