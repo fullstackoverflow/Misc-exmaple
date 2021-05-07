@@ -1,9 +1,10 @@
 import Koa from 'koa';
 import { Service } from '../service/Service';
-import { Controller, GET, POST } from '@tosee/misc';
+import { Controller, GET, POST, Validate } from '@tosee/misc';
 import { Autowired } from '@tosee/util';
 import { Value } from '@tosee/config';
 import { File } from '@tosee/busboy';
+import { Test } from '../schema/test';
 
 @Controller()
 export default class Router {
@@ -21,5 +22,11 @@ export default class Router {
 	})
 	async test(ctx: Koa.Context) {
 		ctx.body = ctx.request.body;
+	}
+
+	@POST('/test2')
+	@Validate({ schema: Test })
+	async test2(ctx: Koa.Context) {
+		ctx.body = ctx.request.body as Test;
 	}
 }
