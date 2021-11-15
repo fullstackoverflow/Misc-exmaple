@@ -7,24 +7,23 @@
 		"doc": "doc"
 	},
 	"dependencies": {
-		"@tosee/busboy": "^1.0.1",
-		"@tosee/config": "^1.0.6",
-		"@tosee/misc": "^4.4.0",
-		"@tosee/util": "^1.0.9",
-		"cross-env": "^5.2.1",
-		"typescript": "^4.2.4"
+		"@tosee/busboy": "^1.1.0",
+		"@tosee/config": "^1.0.7",
+		"@tosee/misc": "^4.6.0",
+		"@tosee/util": "^1.1.2",
+		"cross-env": "^7.0.3",
+		"typescript": "^4.4.4"
 	},
 	"devDependencies": {
-		"@istanbuljs/nyc-config-typescript": "^0.1.3",
-		"@types/jest": "^23.3.14",
-		"@types/supertest": "^2.0.10",
+		"@istanbuljs/nyc-config-typescript": "^1.0.1",
+		"@types/supertest": "^2.0.11",
 		"alsatian": "^3.2.1",
 		"nyc": "^15.1.0",
-		"prettier": "^1.19.1",
-		"pretty-quick": "^1.11.1",
-		"source-map-support": "^0.5.19",
-		"supertest": "^3.4.2",
-		"ts-node": "^7.0.1"
+		"prettier": "^2.4.1",
+		"pretty-quick": "^3.1.1",
+		"source-map-support": "^0.5.20",
+		"supertest": "^6.1.6",
+		"ts-node": "^10.4.0"
 	},
 	"nyc": {
 		"extends": "@istanbuljs/nyc-config-typescript",

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import request from 'supertest';
-import { Server } from '../app';
+import { app } from '../app';
 import { Expect, TestFixture, AsyncTest, SetupFixture, Test } from 'alsatian';
 
 @TestFixture('test')
@@ -9,9 +9,11 @@ export class ExampleTestFixture {
 
 	@Test('test')
 	public async test1() {
-		const instance = request(Server);
-		const response = await instance.get('/?test=111');
+		await app.Wait();
+		const instance = request(app.server);
+		const response = await instance.post('/test2').send({ test: "this is a test", name_2: "hello" });
 		Expect(response.status).toBe(200);
-		Expect(response.text).toBe('6769');
+		Expect(response.body.test).toBe('this is a test');
+		Expect(response.body.name_1).toBe('hello world');
 	}
 }

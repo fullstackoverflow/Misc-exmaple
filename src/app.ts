@@ -12,4 +12,4 @@ const app = new Misc({
 
 const Server = app.server;
 
-export { Server };
+export { Server, app };
