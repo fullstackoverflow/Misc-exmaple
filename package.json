@@ -16,6 +16,7 @@
 	},
 	"devDependencies": {
 		"@istanbuljs/nyc-config-typescript": "^1.0.2",
+		"@types/koa": "^2.13.4",
 		"@types/supertest": "^2.0.11",
 		"alsatian": "^3.2.1",
 		"nyc": "^15.1.0",
