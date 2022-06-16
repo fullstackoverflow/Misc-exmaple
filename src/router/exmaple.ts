@@ -1,9 +1,9 @@
 import Koa from 'koa';
 import { Service } from '../service/Service';
-import { Controller, GET, POST, Validate, Body } from '@tosee/misc';
+import { Controller, GET, POST, Validate, Body, Ctx } from '@tosee/misc';
 import { Autowired } from '@tosee/util';
 import { Value } from '@tosee/config';
-import { File } from '@tosee/busboy';
+import { BusBoy, File } from '@tosee/busboy';
 import { Test } from '../schema/test';
 
 @Controller()
@@ -15,18 +15,25 @@ export default class Router {
 	port: Number;
 
 	@POST('/test')
-	@File(async (filed, stream, filename) => {
-		console.log('trigger');
-		stream.resume();
-		return filename;
-	})
-	async test(@Body body:any) {
-		return body;
+	async test(@Ctx ctx: any) {
+		const instance = new BusBoy({ headers: ctx.headers }, async (
+			fieldname: string, 
+			file: NodeJS.ReadableStream, 
+			filename: string, 
+			encoding: string, 
+			mimetype: string
+		) => {
+			file.resume();
+			return filename;
+		});
+		const { fields, files } = await instance.parse(ctx.request.req);
+		console.log(fields, files);
+		return "Success";
 	}
 
 	@POST('/test2')
 	@Validate({ schema: Test })
-	async test2(@Body body:Test) {
+	async test2(@Body body: Test) {
 		return body;
 	}
 }
